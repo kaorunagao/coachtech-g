@@ -305,13 +305,6 @@
     <div class="card">
       <p class="title mb-15">Todo List</p>
       <div class="todo">
-      @if (count($errors) > 0)
-        <ul>
-          @foreach ($errors->all() as $error)
-          <li>{{$error}}</li>
-          @endforeach
-        </ul>
-      @endif
         <form action="/todo/create" method="post" class="flex between mb-30">
           @csrf         
           <input type="text" class="input-add" name="content" />
@@ -324,9 +317,10 @@
             <th>更新</th>
             <th>削除</th>
           </tr>
+          
           <tr>
             <td>
-              2022-02-21 05:24:05
+              
             </td>
             <form action="/todo/update" method="post">
               @csrf             
@@ -344,6 +338,8 @@
               </form>
             </td>
           </tr>
+          
+          <tr>
         </table>
       </div>
     </div>
