@@ -320,7 +320,7 @@
           
           <tr>
             <td>
-              
+             
             </td>
             <form action="/todo/update" method="post">
               @csrf             
