@@ -30,15 +30,3 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('index');
 });
-
-Route::post('/create', function () {
-    return view('index');
-});
-
-Route::post('/update', function () {
-    return view('index');
-});
-
-Route::post('/delete', function () {
-    return view('index');
-});
