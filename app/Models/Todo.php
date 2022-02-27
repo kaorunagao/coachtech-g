@@ -12,7 +12,9 @@ class Todo extends Model
         'content' => 'required|max:20'
     );
 
-    public function getDetail(){
-        return $this->content;
+     public function getDetail()
+    {
+        $txt = $this->content . $this->created_at . $this->updated_at;
+        return $txt;
     }
 }

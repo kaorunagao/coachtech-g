@@ -329,9 +329,9 @@
           
           <tr>
             <td>
-             
+              
             </td>
-            <form action="/todo/update" method="post">
+            <form action="/todo/update/" method="post">
               @csrf             
               <td>
                 <input type="text" class="input-update" name="content" value="">
@@ -348,7 +348,6 @@
             </td>
           </tr>
           
-          <tr>
         </table>
       </div>
     </div>
