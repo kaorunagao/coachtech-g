@@ -6,6 +6,7 @@ use App\Http\Controllers\TodoController;
 
 Route::prefix('todo')->group(function () {
   Route::get('/', [TodoController::class, 'index']);
+  Route::get('/', [TodoController::class, 'showValue']);
   Route::post('/create', [TodoController::class, 'create']);
   Route::post('/update', [TodoController::class, 'update']);
   Route::post('/delete', [TodoController::class, 'delete']);
