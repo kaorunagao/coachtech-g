@@ -326,7 +326,7 @@
             <th>更新</th>
             <th>削除</th>
           </tr>
-          @foreach($items as $item)
+          @foreach ($items as $item)
           <tr>
             <td>
               

@@ -17,7 +17,7 @@ class Todo extends Model
         'updated_at' => 'required'
     );
 
-     public function getDetail()
+    public function getDetail()
     {
         $txt = $this->content . $this->created_at . $this->updated_at;
         return $txt;
