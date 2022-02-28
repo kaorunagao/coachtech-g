@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TodoController extends Controller
 {
     public function index(Request $request)
     {
-        $items =  Todo::all();
+        $items = Todo::all();
         return view('index', ['items' => $items]);
+
+        $items = array('content','created_at', 'updated_at');
+        return view('index', compact('items'));
     }
 
     public function create(Request $request)
