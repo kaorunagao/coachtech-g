@@ -307,12 +307,10 @@
       <div class="todo">
         @if (count($errors) > 0)
         <ul>
-          @foreach ($errors->all() as $error)
-          <li>
-            {{$error}}
-          </li>
-          @endforeach
-        </ul>
+        @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+      </ul>
         @endif
         <form action="/todo/create" method="post" class="flex between mb-30">
           @csrf         

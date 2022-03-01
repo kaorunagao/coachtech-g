@@ -13,12 +13,6 @@ class TodoController extends Controller
         $items = Todo::all();
         return view('index', ['items' => $items]);
     }
-    
-    public function showValue()
-    {
-        $items = array('content','created_at', 'updated_at');
-        return view('index', compact('items'));
-    }
 
     public function create(Request $request)
     {

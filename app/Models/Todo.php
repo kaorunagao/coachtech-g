@@ -9,17 +9,9 @@ class Todo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content', 'created_at', 'updated_at'];
+    protected $guarded = array('id');
 
     public static $rules = array(
-        'content' => 'required|max:20',
-        'created_at' => 'required',
-        'updated_at' => 'required'
+        'content' => 'required|max:20'
     );
-
-    public function getDetail()
-    {
-        $txt = $this->content . $this->created_at . $this->updated_at;
-        return $txt;
-    }
 }
