@@ -329,7 +329,7 @@
           @foreach ($items as $item)
           <tr>
             <td>
-              
+              {{ $item->created_at }}
             </td>
             <form action="/todo/update/" method="post">
               @csrf             
