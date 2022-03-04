@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 
 Route::get('/', [TodoController::class, 'index']);
-Route::post('/create', [TodoController::class, 'create']);
-Route::post('/update', [TodoController::class, 'update']);
-Route::post('/delete', [TodoController::class, 'delete']);
+
+
+Route::post('/todo/create', [TodoController::class, 'create']);
+Route::post('/todo/update/{id}', [TodoController::class, 'update']);
+Route::post('/todo/delete/{id}', [TodoController::class, 'delete']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +22,10 @@ Route::post('/delete', [TodoController::class, 'delete']);
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//Route::get('/', function () {
+    //return view('welcome');
+//});
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+//Route::get('/', function () {
+    //return view('index');
+//});

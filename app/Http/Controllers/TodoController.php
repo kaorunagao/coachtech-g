@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+
+use App\Http\Requests\ToDo\CreateRequest;
+use App\Http\Requests\ToDo\UpdateRequest;
 
 class TodoController extends Controller
 {
@@ -14,29 +16,26 @@ class TodoController extends Controller
         return view('index', ['items' => $items]);
     }
 
-    public function create(Request $request)
+    public function create(CreateRequest $request) 
     {
-        $this->validate($request, Todo::$rules);
-        $form = $request->all();
-        Todo::create($form);
+        $todo = new Todo();
+        $todo->content = $request->get('content');
+        $todo->save();
         return redirect('/');
     }
 
-    public function update(Request $request)
-    {
-        $this->validate($request, Todo::$rules);
-        $form = $request->all();
-        unset($form['_token']);
-        Todo::where('id', $request->id)->update($form);
-        return redirect('/');
-    }
-
-    public function delete(Request $request)
+    public function update(UpdateRequest $request) 
     {
         $todo = Todo::find($request->id);
-        return view('delete', ['form' => $todo]);
+        $todo->content = $request->get('content');
+        $todo->save();
+        return redirect('/');
+    }
 
-        Todo::find($request->id)->delete();
+    public function delete($id)
+    {
+        $todo = Todo::find($id);
+        $todo->delete();
         return redirect('/');
     }
 }

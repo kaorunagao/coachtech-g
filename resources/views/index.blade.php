@@ -329,17 +329,17 @@
             <td>
               {{ $item->created_at }}
             </td>
-            <form action="/todo/update/" method="post">
+            <form action="/todo/update/{{ $item->id }}" method="post">
               @csrf             
               <td>
-                <input type="text" class="input-update" name="content" value="">
+                <input type="text" class="input-update" name="content" value="{{ $item->content }}">
               </td>
               <td>
                 <button class="button-update">更新</button>
               </td>
             </form>
             <td>
-              <form action="/todo/delete" method="post">
+              <form action="/todo/delete/{{ $item->id }}" method="post">
                 @csrf               
                 <button class="button-delete">削除</button>
               </form>
